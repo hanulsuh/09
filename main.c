@@ -4,20 +4,21 @@
 
 int main(void) 
 {
-	int grade[SIZE];
 	int i;
-	int average, sum = 0;
-		
+	int a[SIZE] = {1, 2, 3, 4, 5};
+	int b[SIZE] = {1, 2, 3, 4, 5};
+	int flag_same = 1;
+	
 	for(i=0; i<SIZE; i++)
 	{
-		printf("Input grade : ");
-		scanf("%d", &grade[i]);
-		sum += grade[i];
+		if (a[i] != b[i])
+		{
+			printf("%d-th element is diff.\n", i);
+			flag_same = 0;
+		}	
 	}
 	
-	average = sum / SIZE;
-	
-	printf("grade average : %d\n", average);
+	printf("Are a and b the same? %d\n", flag_same);
 	
 	return 0;
 }
